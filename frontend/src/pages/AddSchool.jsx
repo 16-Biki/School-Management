@@ -1,4 +1,3 @@
-// frontend/src/pages/AddSchool.jsx
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import "../index.css";
@@ -31,10 +30,13 @@ export default function AddSchool() {
         formData.append("image", data.image[0]);
       }
 
-      const res = await fetch("http://localhost:5000/api/schools", {
-        method: "POST",
-        body: formData,
-      });
+      const res = await fetch(
+        "https://school-management-5cmf.onrender.com/api/schools",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
 
       const json = await res.json();
 

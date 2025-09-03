@@ -1,4 +1,3 @@
-// frontend/src/pages/ShowSchools.jsx
 import React, { useEffect, useState } from "react";
 import "../index.css";
 
@@ -8,7 +7,9 @@ export default function ShowSchools() {
   useEffect(() => {
     const fetchSchools = async () => {
       try {
-        const res = await fetch("http://localhost:5000/api/schools");
+        const res = await fetch(
+          "https://school-management-5cmf.onrender.com/api/schools"
+        );
         const data = await res.json();
         setSchools(data);
       } catch (err) {
@@ -29,7 +30,7 @@ export default function ShowSchools() {
             <div key={s.id} className="school-card">
               {s.image && (
                 <img
-                  src={`http://localhost:5000/schoolImages/${s.image}`}
+                  src={`https://school-management-5cmf.onrender.com/schoolImages/${s.image}`}
                   alt={s.name}
                 />
               )}
